@@ -4,7 +4,7 @@
 
 Sonic Games is a full-stack application developed on a cross-platform architectural model that utilizes sound as the core gameplay mechanic. It is engineered for accessibility-first design and showcases a robust, scalable architecture.  
 
-The project validates the concept of an audio-centric platform, featuring three distinct game modules, a token-based progression system, and is supported by extensive primary market research.
+The project validates the concept of an audio-centric platform, featuring a modular game structure, token-based progression system, and is supported by extensive primary market research.
 
 ---
 
