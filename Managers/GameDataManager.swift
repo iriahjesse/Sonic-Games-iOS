@@ -74,6 +74,18 @@ class GameDataManager{
         let isActive: Bool         // Indicates whether the game is currently active/implemented.
     }
     
+    struct GameLayout { 
+    let rows: Int
+    let columns: Int
+    let cellWidth: Int
+    let cellHeight: Int
+    let cellSpacing: Int
+    
+    // Properties specific to other games (now optional)
+    let sequenceLength: Int?
+    let sequenceDelay: Double?
+    let scrambleSteps: Int?
+    }
     
     // MARK: - Properties
     
