@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>acierdisplay-solid.otf</string>
+		<string>aciertext-solid.otf</string>
+		<string>dizhitl-black.ttf</string>
+		<string>dizhitl-bold.ttf</string>
+		<string>dizhitl-semibold.ttf</string>
+		<string>dizhitl-extrabold.ttf</string>
+		<string>MuktaVaani-Bold.ttf</string>
+		<string>MuktaVaani-ExtraBold.ttf</string>
+		<string>MuktaVaani-SemiBold.ttf</string>
+	</array>
+</dict>
+</plist>
