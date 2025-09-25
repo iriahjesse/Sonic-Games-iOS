@@ -22,9 +22,7 @@ struct HomeView: View {
     private let gameManager = GameDataManager.shared
     @State private var expandedGameKey: GameDataManager.GameKey?
     
-    // FIX 1: Explicitly define the array of keys to iterate over. 
-    // This is structurally safer than relying solely on GameKey.allCases 
-    // being available and correctly ordered, though it assumes GameKey conforms to CaseIterable.
+
     private let availableGameKeys = GameDataManager.GameKey.allCases
     
     var body: some View {
@@ -44,7 +42,7 @@ struct HomeView: View {
             
             VStack{
                 
-                // Upper panel for displaying wins and cash
+                // Upper panel for displaying wins and tokens
                 UpperPanelView(showMoreTokensAlert: $showMoreTokensAlert, showWinsAlert: $showWinsAlert)
                 
                 
@@ -70,7 +68,7 @@ struct HomeView: View {
                             )
                             .onTapGesture {
                                 withAnimation {
-                                    // Logic preserved exactly as you had it
+                                   
                                     if gameManager.getGameProperties(for: gameKey)?.isActive ?? false { 
                                         expandedGameKey = (expandedGameKey == gameKey) ? nil : gameKey // Toggle expansion
                                     }
@@ -103,7 +101,6 @@ struct HomeView: View {
 }
 // Game Accordion setup for active games 
 struct GameAccordion: View {
-    // ... (This section is preserved exactly as you designed it) ...
     let gameKey: GameDataManager.GameKey
     @Binding var isExpanded: Bool
     @Binding var currentView: ViewState
@@ -113,7 +110,7 @@ struct GameAccordion: View {
     private let gameManager = GameDataManager.shared
     
     var body: some View {
-        // All visual layout and offsets are completely untouched to preserve your look
+      
         RoundedRectangle(cornerRadius: 20)
             .fill(Color(gameManager.getGameProperties(for: gameKey)?.accentColor.opacity(gameManager.getGameProperties(for: gameKey)?.isActive ?? true ? 1 : 0.75) ?? .white))
             .frame(maxWidth: 300)
@@ -205,7 +202,6 @@ struct HomeView_Previews: PreviewProvider {
     @State static var previousView: ViewState = .launch
     @State static var selectedGameKey: GameDataManager.GameKey! = .sonicSort
     
-    // FIX 2: Renamed variable for consistency with the main view property name
     @State static var showMoreTokensAlert: Bool = false 
     @State static var showWinsAlert: Bool = false
     
@@ -215,7 +211,6 @@ struct HomeView_Previews: PreviewProvider {
             currentView: $currentView,
             previousView: $previousView,
             selectedGameKey: $selectedGameKey,
-            // Used the corrected variable name
             showMoreTokensAlert: $showMoreTokensAlert, 
             showWinsAlert: $showWinsAlert)
     }
