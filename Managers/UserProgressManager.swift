@@ -26,7 +26,7 @@ class UserProgressManager: ObservableObject {
     @Published private(set) var totalWins: Int = 0
     // Dictionary to store the furthest level completed for each game's mode
     @Published private(set) var gameProgress: [GameDataManager.GameKey: [GameDataManager.GameModeKey: Int]] = [:]
-    private(set) var rewardCollected: Bool = false
+    @Published private(set) var rewardCollected: Bool = false 
     
     // MARK: - Getters
     // View total wins
@@ -43,7 +43,6 @@ class UserProgressManager: ObservableObject {
     func getGameProgress(for gameKey: GameDataManager.GameKey, modeKey: GameDataManager.GameModeKey) -> Int {
         return gameProgress[gameKey]?[modeKey] ?? 0 // Return 0 if no progress found
     }
-    
     
     
     // MARK: - Data Management
